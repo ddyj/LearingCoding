@@ -1,0 +1,3 @@
+/media/dai/Seagate Basic1/学习总文件夹/网课/mysql_learning资料/MysqlConnectPool/build/CMakeFiles/testPool.dir
+/media/dai/Seagate Basic1/学习总文件夹/网课/mysql_learning资料/MysqlConnectPool/build/CMakeFiles/edit_cache.dir
+/media/dai/Seagate Basic1/学习总文件夹/网课/mysql_learning资料/MysqlConnectPool/build/CMakeFiles/rebuild_cache.dir
