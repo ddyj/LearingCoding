@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/dai/Seagate Basic1/学习总文件夹/网课/线程和线程池/code/cpp/RLU.cpp
+iostream
+-
+unordered_map
+-
+

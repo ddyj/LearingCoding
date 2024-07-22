@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_socket/build",
+  "command": "/usr/bin/c++    -g   -std=gnu++11 -o CMakeFiles/server.dir/server.cpp.o -c \"/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_socket/server.cpp\"",
+  "file": "/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_socket/server.cpp"
+},
+{
+  "directory": "/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_socket/build",
+  "command": "/usr/bin/c++    -g   -std=gnu++11 -o CMakeFiles/client.dir/client.cpp.o -c \"/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_socket/client.cpp\"",
+  "file": "/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_socket/client.cpp"
+}
+]

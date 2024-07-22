@@ -1,0 +1,18 @@
+/home/dai/commom/CLion-2019.3.2/clion-2019.3.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc-7 -DCMAKE_CXX_COMPILER=/usr/bin/g++-7 -G "CodeBlocks - Unix Makefiles" "/media/dai/Seagate Basic1/学习总文件夹/网课/QT/QT_E_albums"
+CMake Error at /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake:28 (find_package):
+  Could not find a package configuration file provided by "Qt5Multimedia"
+  with any of the following names:
+
+    Qt5MultimediaConfig.cmake
+    qt5multimedia-config.cmake
+
+  Add the installation prefix of "Qt5Multimedia" to CMAKE_PREFIX_PATH or set
+  "Qt5Multimedia_DIR" to a directory containing one of the above files.  If
+  "Qt5Multimedia" provides a separate development package or SDK, be sure it
+  has been installed.
+Call Stack (most recent call first):
+  CMakeLists.txt:29 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/media/dai/Seagate Basic1/学习总文件夹/网课/QT/QT_E_albums/cmake-build-debug/CMakeFiles/CMakeOutput.log".

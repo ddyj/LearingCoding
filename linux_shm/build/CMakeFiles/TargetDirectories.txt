@@ -1,0 +1,4 @@
+/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_shm/build/CMakeFiles/main.dir
+/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_shm/build/CMakeFiles/fork.dir
+/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_shm/build/CMakeFiles/edit_cache.dir
+/media/dai/Seagate Basic1/学习总文件夹/网课/C++/linux_shm/build/CMakeFiles/rebuild_cache.dir

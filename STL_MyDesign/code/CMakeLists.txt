@@ -1,0 +1,11 @@
+get_filename_component(tarName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+file(GLOB_RECURSE CPP_SOURCES  "*.cpp")
+project(ProjectName)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+foreach(cpp_path ${CPP_SOURCES})
+    get_filename_component(filename ${cpp_path} NAME_WE)
+    add_executable(${filename} ${cpp_path})
+endforeach()
+

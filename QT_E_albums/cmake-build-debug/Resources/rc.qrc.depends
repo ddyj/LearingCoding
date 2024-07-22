@@ -1,0 +1,55 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../icon/bulm.ico</file>
+        <file>../icon/close.png</file>
+        <file>../icon/closeshow.png</file>
+        <file>../icon/closeshow_hover.png</file>
+        <file>../icon/closeshow_press.png</file>
+        <file>../icon/core.png</file>
+        <file>../icon/createpro.png</file>
+        <file>../icon/dir.png</file>
+        <file>../icon/down.png</file>
+        <file>../icon/import.png</file>
+        <file>../icon/left.png</file>
+        <file>../icon/music.png</file>
+        <file>../icon/next.png</file>
+        <file>../icon/next_hover.png</file>
+        <file>../icon/next_press.png</file>
+        <file>../icon/openpro.png</file>
+        <file>../icon/pause.png</file>
+        <file>../icon/pause_hover.png</file>
+        <file>../icon/pause_press.png</file>
+        <file>../icon/pic.png</file>
+        <file>../icon/play.png</file>
+        <file>../icon/play_hover.png</file>
+        <file>../icon/play_press.png</file>
+        <file>../icon/previous.png</file>
+        <file>../icon/previous_hover.png</file>
+        <file>../icon/previous_press.png</file>
+        <file>../icon/right.png</file>
+        <file>../icon/show.jpg</file>
+        <file>../icon/slideshow.png</file>
+        <file>../music/赵雷 - 凌晨计程车.mp3</file>
+        <file>../album/small4f9ea5c08763bc2de22b043cf83d1c241635130725.jpg</file>
+        <file>../album/small000254E1svV1653580974.jpg</file>
+        <file>../album/small000615ZuvSb1663257975.jpg</file>
+        <file>../album/small000938X3ZXT1664122178.jpg</file>
+        <file>../album/small001132e0LjI1650471092.jpg</file>
+        <file>../album/small001430qrtXv1647188070.jpg</file>
+        <file>../album/small002117VeofM1657902077.jpg</file>
+        <file>../album/small002656yDIge1648484816.jpg</file>
+        <file>../album/small003056xkiGu1652200256.jpg</file>
+        <file>../album/small004654RU5ZP1644425214.jpg</file>
+        <file>../album/small0014452yZJA1644596085.jpg</file>
+        <file>../album/small0045345xzSc1658767534.jpg</file>
+        <file>../album/small110442r6vuh1666667082.jpg</file>
+        <file>../album/small175001gchIc1672221001.jpg</file>
+        <file>../album/small230047Fh95W1666969247.jpg</file>
+        <file>../album/small231714B6UCR1667229434.jpg</file>
+        <file>../album/small232115v5Hqm1671290475.jpg</file>
+        <file>../album/small232117fNZMM1665674477.jpg</file>
+        <file>../album/small234055JKvyM1659454855.jpg</file>
+        <file>../album/small2349597wqUm1669909799.jpg</file>
+        <file>../style/style.qss</file>
+    </qresource>
+</RCC>
