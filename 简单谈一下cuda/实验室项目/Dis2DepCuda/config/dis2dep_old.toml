@@ -1,0 +1,16 @@
+[Input]
+dis_path ="../data_test/output/%d/%04d.tiff"
+pose_path="../data_test/xml/stereo/%04d.xml"
+
+camera_num = 2
+time_num = 1
+
+
+width = 2160
+height = 3840
+
+
+block_size = 5
+
+[Output]
+depth_path= "../data_test/dep/"

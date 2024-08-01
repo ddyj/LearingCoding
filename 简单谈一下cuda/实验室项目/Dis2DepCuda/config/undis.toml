@@ -1,0 +1,17 @@
+[Input]
+rgb_path ="/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/rgb/%d/%04d.jpg"
+pose_path="/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/xml/%04d.xml"
+
+camera_num = 3
+time_num = 100
+
+
+width = 2160
+height = 3840
+
+depth_path = "/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/depth/%d/%04d.png"
+
+[Output]
+xml_path= "/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/xml/stereo_new/%04d.xml"
+# undis_path = "/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/rgb/%d/undis/%04d.jpg"
+output_path = "/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/rgb/%d/undis_%04d.png"

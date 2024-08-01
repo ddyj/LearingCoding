@@ -1,0 +1,16 @@
+[Input]
+dis_path ="/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/output/%d/stereo_%04d.tiff"
+pose_path="/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/xml/stereo_new/%04d.xml"
+
+camera_num = 3
+time_num = 100
+
+
+width = 2160
+height = 3840
+
+
+block_size = 10
+
+[Output]
+depth_path= "/home/fhy/workspace/e2_scan_obj/code/stereo_recon/dataset/depth/"

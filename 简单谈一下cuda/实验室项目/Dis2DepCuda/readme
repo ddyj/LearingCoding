@@ -1,0 +1,13 @@
+使用说明 2023_0919
+代码用于加速旧版双目处理
+
+
+输入数据格式参考dataset
+1.process_stereo 替换双目矫正部分 矫正部分代码读取undis.toml中文件 使用生产消费模型多线程执行 如果觉得慢了可以调整代码中生产者\消费者线程数
+	矫正后的图存储在color文件下(没有新建文件) 命名为stereo_%04d.png 同时存储compare结果 同时会在xml文件下生成一个stereo文件存储双目矫正结果(dataset中写的是stereo_new 在toml中修改)
+2.main 替换dis2dep以及dep_align 使用dis2dep.toml文件 如果感觉慢 修改toml中的block_size 表示每次最大往cuda中输入几组图参与计算  会在data(dataset 以toml中output为准)文件下建立一个dep文件 存储深度图
+3.undis_all 替换最后一步 使用undis.toml数据 使用生产消费模型多线程执行 如果觉得慢了可以调整代码中生产者\消费者线程数
+	去畸变后的图存储在color/dep文件下(没有新建文件) 命名为undis_%04d.png 
+
+需要测试?
+
