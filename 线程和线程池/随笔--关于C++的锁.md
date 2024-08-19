@@ -176,3 +176,46 @@ void test_recursive_mutex() {
 	t2.join();
 }
 ```
+
+# 信号量
+信号量本质上是内核态的计数器，sem库
+```c++
+#include <semaphore.h>
+class sem
+{
+public:
+    sem()
+    {
+        if (sem_init(&m_sem, 0, 0) != 0)
+        {
+            throw std::exception();
+        }
+    }
+    // 第三个参数(num)为信号量的初始值。
+    // 如果一个信号量的初始值设置为N，那么在没有其他线程调用post的情况下，最多允许N个线程通过wait操作而不被阻塞。
+    sem(int num)
+    {
+        if (sem_init(&m_sem, 0, num) != 0)
+        {
+            throw std::exception();
+        }
+    }
+    ~sem()
+    {
+        sem_destroy(&m_sem);
+    }
+    bool wait()
+    {
+        return sem_wait(&m_sem) == 0;
+    }
+    bool post()
+    {
+        return sem_post(&m_sem) == 0;
+    }
+
+private:
+    sem_t m_sem;
+};
+```
+sem库实现的sem_wait\sem_pose的pv操作、sem_init注册sem_destroy销毁
+调用时候上锁用wait 解锁用post
