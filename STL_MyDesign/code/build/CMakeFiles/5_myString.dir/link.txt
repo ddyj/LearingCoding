@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/5_myString.dir/5_myString.o -o 5_myString 

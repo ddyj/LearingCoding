@@ -1,4 +1,0 @@
-/media/dai/Seagate Basic1/学习总文件夹/网课/QT/QT_E_albums/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/media/dai/Seagate Basic1/学习总文件夹/网课/QT/QT_E_albums/cmake-build-debug/CMakeFiles/QT_E_albums.dir
-/media/dai/Seagate Basic1/学习总文件夹/网课/QT/QT_E_albums/cmake-build-debug/CMakeFiles/edit_cache.dir
-/media/dai/Seagate Basic1/学习总文件夹/网课/QT/QT_E_albums/cmake-build-debug/CMakeFiles/QT_E_albums_autogen.dir

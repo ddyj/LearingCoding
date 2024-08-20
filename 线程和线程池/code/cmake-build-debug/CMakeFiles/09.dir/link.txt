@@ -1,1 +1,0 @@
-/usr/bin/g++-7  -g  -rdynamic CMakeFiles/09.dir/cpp/09.cpp.o  -o bin/09 -lpthread 

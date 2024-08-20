@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-b475cbb34ba8471589bd1a4de566d380 CMakeFiles/matrix_multiplication.dir/code/matrix_multiplication_generated_CudaMatrixMuti.cu.o

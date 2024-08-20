@@ -1,3 +1,0 @@
-/media/dai/Seagate Basic1/学习总文件夹/网课/线程和线程池/生产消费模型/build/CMakeFiles/code.dir
-/media/dai/Seagate Basic1/学习总文件夹/网课/线程和线程池/生产消费模型/build/CMakeFiles/edit_cache.dir
-/media/dai/Seagate Basic1/学习总文件夹/网课/线程和线程池/生产消费模型/build/CMakeFiles/rebuild_cache.dir

@@ -1,1 +1,0 @@
-/usr/bin/g++-7  -g  -rdynamic CMakeFiles/04.dir/cpp/04.cpp.o  -o bin/04 -lpthread 

@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/1_myAllocate.dir/1_myAllocate.o -o 1_myAllocate 

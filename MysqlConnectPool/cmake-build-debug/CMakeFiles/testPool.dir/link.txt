@@ -1,1 +1,0 @@
-/usr/bin/g++-7   -O0 -Wall -g2 -ggdb   CMakeFiles/testPool.dir/app/testPool.cpp.o CMakeFiles/testPool.dir/src/MysqlConn.cpp.o CMakeFiles/testPool.dir/src/MysqlConnPool.cpp.o  -o testPool  -L/usr/lib/mysql -Wl,-rpath,/usr/lib/mysql -lmysqlclient -lpthread 

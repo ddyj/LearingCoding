@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/4_myUnique_ptr.dir/4_myUnique_ptr.o -o 4_myUnique_ptr 

@@ -1,1 +1,0 @@
-/usr/bin/g++-7  -g  -rdynamic CMakeFiles/15.dir/cpp/15.cpp.o  -o bin/15 -lpthread 

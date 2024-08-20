@@ -1,1 +1,0 @@
-/usr/bin/g++-7  -g  -rdynamic CMakeFiles/06.dir/cpp/06.cpp.o  -o bin/06 -lpthread 

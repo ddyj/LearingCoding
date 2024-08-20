@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/17.dir/cpp/17.cpp.o -o bin/17  -lpthread 

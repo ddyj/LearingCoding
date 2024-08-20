@@ -1,3 +1,0 @@
-/media/dai/Seagate Basic1/学习总文件夹/网课/简单谈一下cuda/build/CMakeFiles/rebuild_cache.dir
-/media/dai/Seagate Basic1/学习总文件夹/网课/简单谈一下cuda/build/CMakeFiles/matrix_multiplication.dir
-/media/dai/Seagate Basic1/学习总文件夹/网课/简单谈一下cuda/build/CMakeFiles/edit_cache.dir

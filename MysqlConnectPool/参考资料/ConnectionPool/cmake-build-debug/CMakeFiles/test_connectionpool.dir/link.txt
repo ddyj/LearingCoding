@@ -1,1 +1,0 @@
-/usr/bin/g++-7   -O0 -Wall -g2 -ggdb   CMakeFiles/test_connectionpool.dir/app/test_connectionpool.cpp.o CMakeFiles/test_connectionpool.dir/src/CommonConnectionPool.cpp.o CMakeFiles/test_connectionpool.dir/src/Connection.cpp.o  -o test_connectionpool  -L/usr/lib/mysql -Wl,-rpath,/usr/lib/mysql -lmysqlclient -lpthread 
