@@ -1,0 +1,4 @@
+管道和消息队列的简单实现
+
+管道使用过pipe函数实现的，注意在多进程通信的过程中，是一个半双工的工作，用read、write实现读写
+消息队列则是使用msgget创建、msgsend发送、msgrec接收、msgctl 关闭

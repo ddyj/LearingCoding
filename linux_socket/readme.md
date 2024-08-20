@@ -51,3 +51,10 @@ if (valread > 0) {
     std::cout << "Received person from server: " << receivedPerson.name << ", " << receivedPerson.age << std::endl;
 }
 ```
+
+
+# 服务端和客户端是怎么设置的呢
+服务端设置port为8000 ip为INADDR_ANY,表示监听任意ip端口为8000的socket连接
+服务端经过创建socket、bind、listen后如果有客户端传入就会使用accept接收一个新的客户端连接 
+
+客户端只需要创建socket后根据ip、port直接connect即可
