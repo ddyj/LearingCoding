@@ -219,3 +219,75 @@ private:
 ```
 sem库实现的sem_wait\sem_pose的pv操作、sem_init注册sem_destroy销毁
 调用时候上锁用wait 解锁用post
+
+# 时间锁
+一般设计用来反之死锁。具体的应用就例如mysql中多个事务相互争抢临界资源导致死锁。此时mysql为每一个事务设计了一个时间计时器，当计时器结束的时候就会关闭事务，释放资源，此时就解决了死锁的问题。
+在C++中引入std::timed_mutex 或 std::shared_timed_mutex关键字，在上锁的时候需要引入一个超时时间，一旦超时就会触发函数
+```c++
+std::timed_mutex mtx1;
+std::timed_mutex mtx2;
+void thread1() {
+	while (true) {
+		// 尝试获取mtx1锁
+		if (mtx1.try_lock_for(std::chrono::milliseconds(100))) {
+			std::cout << "Thread 1 acquired mtx1" << std::endl;
+			// 尝试获取mtx2锁
+			if (mtx2.try_lock_for(std::chrono::milliseconds(100))) {
+				std::cout << "Thread 1 acquired mtx2" << std::endl;
+				// 对共享资源进行操作
+				std::cout << "Thread 1 is processing..." << std::endl;
+
+				// 解锁
+				mtx2.unlock();
+				mtx1.unlock();
+				break;
+			}
+			else {
+				std::cout << "Thread 1 could not acquire mtx2, retrying..." << std::endl;
+				mtx1.unlock();  // 释放mtx1以避免死锁
+			}
+		}
+		else {
+			std::cout << "Thread 1 could not acquire mtx1, retrying..." << std::endl;
+		}
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));  // 等待一段时间后重试
+	}
+}
+void thread2() {
+	while (true) {
+		// 尝试获取mtx2锁
+		if (mtx2.try_lock_for(std::chrono::milliseconds(100))) {
+			std::cout << "Thread 2 acquired mtx2" << std::endl;
+			// 尝试获取mtx1锁
+			if (mtx1.try_lock_for(std::chrono::milliseconds(100))) {
+				std::cout << "Thread 2 acquired mtx1" << std::endl;
+				// 对共享资源进行操作
+				std::cout << "Thread 2 is processing..." << std::endl;
+
+				// 解锁
+				mtx1.unlock();
+				mtx2.unlock();
+				break;
+			}
+			else {
+				std::cout << "Thread 2 could not acquire mtx1, retrying..." << std::endl;
+				mtx2.unlock();  // 释放mtx2以避免死锁
+			}
+		}
+		else {
+			std::cout << "Thread 2 could not acquire mtx2, retrying..." << std::endl;
+		}
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));  // 等待一段时间后重试
+	}
+}
+
+void test_time_mutex() {
+	std::thread t1(thread1);
+	std::thread t2(thread2);
+
+	t1.join();
+	t2.join();
+
+	std::cout << "Both threads finished processing." << std::endl;
+}
+```
