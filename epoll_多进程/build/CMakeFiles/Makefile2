@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = "/media/dai/Seagate Basic1/学习总文件夹/网课/C++/epol
 
 # The main recursive "all" target.
 all: CMakeFiles/server.dir/all
+all: CMakeFiles/sever_base.dir/all
 all: CMakeFiles/client.dir/all
 .PHONY : all
 
@@ -73,6 +74,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/server.dir/clean
+clean: CMakeFiles/sever_base.dir/clean
 clean: CMakeFiles/client.dir/clean
 .PHONY : clean
 
@@ -101,6 +103,32 @@ server: CMakeFiles/server.dir/rule
 CMakeFiles/server.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
 .PHONY : CMakeFiles/server.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sever_base.dir
+
+# All Build rule for target.
+CMakeFiles/sever_base.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sever_base.dir/build.make CMakeFiles/sever_base.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sever_base.dir/build.make CMakeFiles/sever_base.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/dai/Seagate Basic1/学习总文件夹/网课/C++/epoll_多进程/build/CMakeFiles" --progress-num=5,6 "Built target sever_base"
+.PHONY : CMakeFiles/sever_base.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sever_base.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/dai/Seagate Basic1/学习总文件夹/网课/C++/epoll_多进程/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sever_base.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/dai/Seagate Basic1/学习总文件夹/网课/C++/epoll_多进程/build/CMakeFiles" 0
+.PHONY : CMakeFiles/sever_base.dir/rule
+
+# Convenience name for target.
+sever_base: CMakeFiles/sever_base.dir/rule
+.PHONY : sever_base
+
+# clean rule for target.
+CMakeFiles/sever_base.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sever_base.dir/build.make CMakeFiles/sever_base.dir/clean
+.PHONY : CMakeFiles/sever_base.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/client.dir

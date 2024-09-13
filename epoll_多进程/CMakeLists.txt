@@ -9,4 +9,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # 包含服务器端和客户端的子目录
 add_executable(server sever.cpp)
+add_executable(sever_base sever_base.cpp)
 add_executable(client client.cpp)

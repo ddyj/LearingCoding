@@ -8,7 +8,6 @@
 #include <sys/wait.h>
 
 #define MAX_EVENTS 10
-#define MAX_BUFFER 5
 #define PORT 8080
 
 // 设置文件描述符为非阻塞模式
@@ -39,13 +38,7 @@ void toUpperCase(char* str, int len) {
 void sigchld_handler(int sig) {
     // 使用非阻塞的 waitpid 处理所有子进程
     while (waitpid(0, nullptr, WNOHANG) > 0);
-    std::cout << "Forked child process to handle data." << std::endl;
 }
-
-
-
-
-
 
 int main() {
     int server_fd, new_socket, epoll_fd;
@@ -78,7 +71,7 @@ int main() {
     }
 
     // 设置监听地址和端口
-    address.sin_family = AF_INET; //要和socket第一个参数一致
+    address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(PORT);
 
@@ -105,7 +98,7 @@ int main() {
     setNonBlocking(server_fd);
 
     // 将监听socket添加到epoll
-    ev.events = EPOLLIN;  // 监听读事件 一般是LT
+    ev.events = EPOLLIN;  // 监听读事件
     ev.data.fd = server_fd;
     if (epoll_ctl(epoll_fd, EPOLL_CTL_ADD, server_fd, &ev) == -1) {
         perror("epoll_ctl: server_fd");
@@ -138,8 +131,6 @@ int main() {
 
                 // 将新socket添加到epoll实例
                 ev.events = EPOLLIN | EPOLLET;  // 边缘触发
-                //ev.events = EPOLLIN;          // 水平触发
-
                 ev.data.fd = new_socket;
                 if (epoll_ctl(epoll_fd, EPOLL_CTL_ADD, new_socket, &ev) == -1) {
                     perror("epoll_ctl: new_socket");
@@ -150,89 +141,38 @@ int main() {
 
             } else {
                 // 已连接客户端发送数据
-                size_t buffer_size = 1024;
-                size_t total_bytes_read = 0;
-                char* buffer = (char*)malloc(buffer_size);
-
-                int count = 0;
-                char temp_buffer[MAX_BUFFER] = {0};
-                while (true) {
-                    count = read(events[i].data.fd, temp_buffer, MAX_BUFFER);
-                    if (count == -1) {
-                        if(errno == EAGAIN) {
-                            break;
-                        }
-                       else{
-                            perror("read");
-                            if(buffer!=nullptr) {
-                                free(buffer);
-                                buffer = nullptr;
-                            }
-
-                            close(events[i].data.fd);
-                            break;
-                        }
-                    } else if (count == 0) {
-                        // 客户端断开连接
-                        std::cout << "Client disconnected!" << std::endl;
-                        if(buffer!=nullptr) {
-                            free(buffer);
-                            buffer = nullptr;
-                        }
+                char buffer[1024] = {0};
+                int count = read(events[i].data.fd, buffer, sizeof(buffer));
+                if (count == -1) {
+                    if (errno != EAGAIN) {
+                        perror("read");
                         close(events[i].data.fd);
-                        break;
                     }
-                    else{
-                        if(total_bytes_read + count >= buffer_size){
-                            buffer_size = buffer_size * 2 + count;
-                            char* new_buffer = (char*)realloc(buffer, buffer_size);
-                            if (new_buffer == nullptr) {
-                                std::cerr << "Memory reallocation failed" << std::endl;
-                                if(buffer!=nullptr) {
-                                    free(buffer);
-                                    buffer = nullptr;
-                                }
-                                close(events[i].data.fd);
-                                break;
-                            }
-                            buffer = new_buffer;
-                        }
-                        memcpy(buffer+total_bytes_read,temp_buffer,count);
-                        total_bytes_read += count;
-                    }
-                }
-                if(total_bytes_read == 0){
-                    free(buffer);
-                    continue;
-                }
-                // 创建子进程处理大小写转换
-                pid_t pid = fork();
-                if (pid == 0) {
-                    //子进程中，不需要监听epoll事件
-                    close(server_fd);
-
-                    // 子进程
-                    toUpperCase(buffer, total_bytes_read);
-                    write(events[i].data.fd, buffer, total_bytes_read);  // Echo 回客户端
-                    if(buffer!=nullptr) {
-                        free(buffer);
-                        buffer = nullptr;
-                    }
-                    close(events[i].data.fd);  // 关闭子进程中的socket
-                    exit(0);  // 子进程退出
-                } else if (pid > 0) {
-                    // 父进程继续
-                    int status;
-                    waitpid(pid,&status,0);
-                    free(buffer);
-                } else {
-                    perror("fork");
-                    if(buffer!=nullptr) {
-                        free(buffer);
-                        buffer = nullptr;
-                    }
+                } else if (count == 0) {
+                    // 客户端断开连接
+                    std::cout << "Client disconnected!" << std::endl;
                     close(events[i].data.fd);
-                    break;
+                } else {
+                    // 创建子进程处理大小写转换
+                    pid_t pid = fork();
+                    if (pid == 0) {
+                         //这里不需要监听epoll事件
+                        close(server_fd);
+                        // 子进程
+                        toUpperCase(buffer, count);
+                        write(events[i].data.fd, buffer, count);  // Echo 回客户端
+                        close(events[i].data.fd);  // 关闭子进程中的socket
+                        exit(0);  // 子进程退出
+                    } else if (pid > 0) {
+                        // 父进程继续  
+                        //这里不需要监听这个事件
+                        int status;
+                        waitpid(pid,&status,0);
+                        //close(events[i].data.fd);
+                        std::cout << "Forked child process to handle data." << std::endl;
+                    } else {
+                        perror("fork");
+                    }
                 }
             }
         }

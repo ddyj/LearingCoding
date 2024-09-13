@@ -130,6 +130,19 @@ server/fast:
 .PHONY : server/fast
 
 #=============================================================================
+# Target rules for targets named sever_base
+
+# Build rule for target.
+sever_base: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sever_base
+.PHONY : sever_base
+
+# fast build rule for target.
+sever_base/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sever_base.dir/build.make CMakeFiles/sever_base.dir/build
+.PHONY : sever_base/fast
+
+#=============================================================================
 # Target rules for targets named client
 
 # Build rule for target.
@@ -190,6 +203,30 @@ sever.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/sever.cpp.s
 .PHONY : sever.cpp.s
 
+sever_base.o: sever_base.cpp.o
+.PHONY : sever_base.o
+
+# target to build an object file
+sever_base.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sever_base.dir/build.make CMakeFiles/sever_base.dir/sever_base.cpp.o
+.PHONY : sever_base.cpp.o
+
+sever_base.i: sever_base.cpp.i
+.PHONY : sever_base.i
+
+# target to preprocess a source file
+sever_base.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sever_base.dir/build.make CMakeFiles/sever_base.dir/sever_base.cpp.i
+.PHONY : sever_base.cpp.i
+
+sever_base.s: sever_base.cpp.s
+.PHONY : sever_base.s
+
+# target to generate assembly for a file
+sever_base.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sever_base.dir/build.make CMakeFiles/sever_base.dir/sever_base.cpp.s
+.PHONY : sever_base.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -200,12 +237,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... client"
 	@echo "... server"
+	@echo "... sever_base"
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
 	@echo "... sever.o"
 	@echo "... sever.i"
 	@echo "... sever.s"
+	@echo "... sever_base.o"
+	@echo "... sever_base.i"
+	@echo "... sever_base.s"
 .PHONY : help
 
 

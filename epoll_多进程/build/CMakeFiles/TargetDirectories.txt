@@ -1,4 +1,5 @@
 /media/dai/Seagate Basic1/学习总文件夹/网课/C++/epoll_多进程/build/CMakeFiles/server.dir
+/media/dai/Seagate Basic1/学习总文件夹/网课/C++/epoll_多进程/build/CMakeFiles/sever_base.dir
 /media/dai/Seagate Basic1/学习总文件夹/网课/C++/epoll_多进程/build/CMakeFiles/client.dir
 /media/dai/Seagate Basic1/学习总文件夹/网课/C++/epoll_多进程/build/CMakeFiles/edit_cache.dir
 /media/dai/Seagate Basic1/学习总文件夹/网课/C++/epoll_多进程/build/CMakeFiles/rebuild_cache.dir
